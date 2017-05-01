@@ -3,21 +3,87 @@
     package="com.vscene.server.server">
 
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
     <application
+        android:name="com.vscene.server.FsApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.vscene.server.ServerFinallyActivity">
+        <activity android:name="com.vscene.server.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name="com.vscene.server.receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.vscene.server.socketserver.services.SocketService" />
+
+        <service android:name="com.vscene.server.ftpserver.FsService"/>
+
+        <receiver
+            android:name="com.vscene.server.ftpserver.gui.FsNotification"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STARTED" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STOPPED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.vscene.server.ftpserver.NsdService" />
+        <receiver
+            android:name="com.vscene.server.ftpserver.NsdService$StartStopReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STARTED" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STOPPED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Don't export this receiver in free, this clashes with paid -->
+        <receiver
+            android:name="com.vscene.server.ftpserver.RequestStartStopReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="be.ppareit.swiftp.ACTION_START_FTPSERVER" />
+                <action android:name="be.ppareit.swiftp.ACTION_STOP_FTPSERVER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:icon="@drawable/notification"
+            android:label="@string/swiftp_name"
+            android:name="com.vscene.server.ftpserver.gui.FsWidgetProvider"
+            android:exported="false" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STARTED" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STOPPED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name="com.vscene.server.ftpserver.gui.FsWidgetProvider$UpdateService" />
+
     </application>
 
 </manifest>

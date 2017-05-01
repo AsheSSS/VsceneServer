@@ -1,3 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Server</string>
+
+    <string name="app_name">AndroidFtp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ubuntuscr">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#Rename this file to "sources.list"(without quotation marks)\r\n
+#Put this file in /etc/apt/sources.list\r\n
+#ubuntu12.04\r\n
+deb http://mirror.lzu.edu.cn/ubuntu/ precise main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu/ precise-security main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu/ precise-backports main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu/ precise main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-security main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-backports main restricted universe multiverse\r\n
+#ubuntu12.10\r\n
+#网易的源（163源，无论是不是教育网，速度都很快）\r\n
+#deb http://mirrors.163.com/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb-src http://mirrors.163.com/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb http://mirrors.163.com/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb-src http://mirrors.163.com/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb http://mirrors.163.com/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+#deb http://mirrors.163.com/ubuntu/ quantal-proposed universe main multiverse restricted\r\n
+#deb-src http://mirrors.163.com/ubuntu/ quantal-proposed universe main multiverse restricted\r\n
+#deb http://mirrors.163.com/ubuntu/ quantal-backports universe main multiverse restricted\r\n
+#deb-src http://mirrors.163.com/ubuntu/ quantal-backports universe main multiverse restricted\r\n
+#deb-src http://mirrors.163.com/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+\r\n
+#搜狐的源（sohu 源今天还没有更新，不过应该快了）\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal main restricted\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal main restricted\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-updates main restricted\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-updates main restricted\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal universe\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal universe\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-updates universe\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-updates universe\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal multiverse\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal multiverse\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-updates multiverse\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-updates multiverse\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-security main restricted\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-security main restricted\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-security universe\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-security universe\r\n
+#deb http://mirrors.sohu.com/ubuntu/ quantal-security multiverse\r\n
+#deb-src http://mirrors.sohu.com/ubuntu/ quantal-security multiverse\r\n
+#deb http://extras.ubuntu.com/ubuntu quantal main\r\n
+#deb-src http://extras.ubuntu.com/ubuntu quantal main
+\r\n
+#台湾源（台湾的ubuntu 更新源还是很给力的）\r\n
+#deb http://tw.archive.ubuntu.com/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb-src http://tw.archive.ubuntu.com/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb http://tw.archive.ubuntu.com/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb-src http://tw.archive.ubuntu.com/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb http://tw.archive.ubuntu.com/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+#deb-src http://tw.archive.ubuntu.com/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+\r\n
+#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin\r\n
+#deb http://ubuntu.srt.cn/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb-src http://ubuntu.srt.cn/ubuntu/ quantal main universe restricted multiverse\r\n
+#deb http://ubuntu.srt.cn/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb-src http://ubuntu.srt.cn/ubuntu/ quantal-security universe main multiverse restricted\r\n
+#deb http://ubuntu.srt.cn/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+#deb http://ubuntu.srt.cn/ubuntu/ quantal-proposed universe main multiverse restricted\r\n
+#deb-src http://ubuntu.srt.cn/ubuntu/ quantal-proposed universe main multiverse restricted\r\n
+#deb http://ubuntu.srt.cn/ubuntu/ quantal-backports universe main multiverse restricted\r\n
+#deb-src http://ubuntu.srt.cn/ubuntu/ quantal-backports universe main multiverse restricted\r\n
+#deb-src http://ubuntu.srt.cn/ubuntu/ quantal-updates universe main multiverse restricted\r\n
+\r\n
+#ubuntu.cn99.com源（推荐）:\r\n
+#deb http://ubuntu.cn99.com/ubuntu/ quantal main restricted universe multiverse\r\n
+#deb http://ubuntu.cn99.com/ubuntu/ quantal-updates main restricted universe multiverse\r\n
+#deb http://ubuntu.cn99.com/ubuntu/ quantal-security main restricted universe multiverse\r\n
+#deb http://ubuntu.cn99.com/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb http://ubuntu.cn99.com/ubuntu-cn/ quantal main restricted universe multiverse\r\n
+\r\n
+#教育网源\r\n
+#电子科技大学\r\n
+#deb http://ubuntu.uestc.edu.cn/ubuntu/ quantal main restricted universe multiverse\r\n
+#deb http://ubuntu.uestc.edu.cn/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb http://ubuntu.uestc.edu.cn/ubuntu/ quantal-proposed main restricted universe multiverse\r\n
+#deb http://ubuntu.uestc.edu.cn/ubuntu/ quantal-security main restricted universe multiverse\r\n
+#deb http://ubuntu.uestc.edu.cn/ubuntu/ quantal-updates main restricted universe multiverse\r\n
+#deb-src http://ubuntu.uestc.edu.cn/ubuntu/ quantal main restricted universe multiverse\r\n
+#deb-src http://ubuntu.uestc.edu.cn/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb-src http://ubuntu.uestc.edu.cn/ubuntu/ quantal-proposed main restricted universe multiverse\r\n
+#deb-src http://ubuntu.uestc.edu.cn/ubuntu/ quantal-security main restricted universe multiverse\r\n
+#deb-src http://ubuntu.uestc.edu.cn/ubuntu/ quantal-updates main restricted universe multiverse\r\n
+\r\n
+#中国科技大学\r\n
+#deb http://debian.ustc.edu.cn/ubuntu/ quantal main restricted universe multiverse\r\n
+#deb http://debian.ustc.edu.cn/ubuntu/ quantal-backports restricted universe multiverse\r\n
+#deb http://debian.ustc.edu.cn/ubuntu/ quantal-proposed main restricted universe multiverse\r\n
+#deb http://debian.ustc.edu.cn/ubuntu/ quantal-security main restricted universe multiverse\r\n
+#deb http://debian.ustc.edu.cn/ubuntu/ quantal-updates main restricted universe multiverse\r\n
+#deb-src http://debian.ustc.edu.cn/ubuntu/ quantal main restricted universe multiverse\r\n
+#deb-src http://debian.ustc.edu.cn/ubuntu/ quantal-backports main restricted universe multiverse\r\n
+#deb-src http://debian.ustc.edu.cn/ubuntu/ quantal-proposed main restricted universe multiverse\r\n
+#deb-src http://debian.ustc.edu.cn/ubuntu/ quantal-security main restricted universe multiverse\r\n
+#deb-src http://debian.ustc.edu.cn/ubuntu/ quantal-updates main restricted universe multiverse\r\n
+#北京理工大学\r\n
+#deb http://mirror.bjtu.edu.cn/ubuntu/ quantal main multiverse restricted universe\r\n
+#deb http://mirror.bjtu.edu.cn/ubuntu/ quantal-backports main multiverse restricted universe\r\n
+#deb http://mirror.bjtu.edu.cn/ubuntu/ quantal-proposed main multiverse restricted universe\r\n
+#deb http://mirror.bjtu.edu.cn/ubuntu/ quantal-security main multiverse restricted universe\r\n
+#deb http://mirror.bjtu.edu.cn/ubuntu/ quantal-updates main multiverse restricted universe\r\n
+#deb-src http://mirror.bjtu.edu.cn/ubuntu/ quantal main multiverse restricted universe\r\n
+#deb-src http://mirror.bjtu.edu.cn/ubuntu/ quantal-backports main multiverse restricted universe\r\n
+#deb-src http://mirror.bjtu.edu.cn/ubuntu/ quantal-proposed main multiverse restricted universe\r\n
+#deb-src http://mirror.bjtu.edu.cn/ubuntu/ quantal-security main multiverse restricted universe\r\n
+#deb-src http://mirror.bjtu.edu.cn/ubuntu/ quantal-updates main multiverse restricted universe\r\n
+\r\n
+#兰州大学\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu/ quantal main multiverse restricted universe\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu/ quantal-backports main multiverse restricted universe\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu/ quantal-proposed main multiverse restricted universe\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu/ quantal-security main multiverse restricted universe\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu/ quantal-updates main multiverse restricted universe\r\n
+#deb ftp://mirror.lzu.edu.cn/ubuntu-cn/ quantal main multiverse restricted universe\r\n
+\r\n
+#上海交通大学（上海交大源，教育网的速度不用说了）\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu/ quantal main multiverse restricted universe\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu/ quantal-backports main multiverse restricted universe\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu/ quantal-proposed main multiverse restricted universe\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu/ quantal-security main multiverse restricted universe\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu/ quantal-updates main multiverse restricted universe\r\n
+#deb http://ftp.sjtu.edu.cn/ubuntu-cn/ quantal main multiverse restricted universe\r\n
+#deb-src http://ftp.sjtu.edu.cn/ubuntu/ quantal main multiverse restricted universe\r\n
+#deb-src http://ftp.sjtu.edu.cn/ubuntu/ quantal-backports main multiverse restricted universe\r\n
+#deb-src http://ftp.sjtu.edu.cn/ubuntu/ quantal-proposed main multiverse restricted universe\r\n
+#deb-src http://ftp.sjtu.edu.cn/ubuntu/ quantal-security main multiverse restricted universe\r\n
+#deb-src http://ftp.sjtu.edu.cn/ubuntu/ quantal-updates main multiverse restricted universe\r\n
+</string>
+<string name="archlinux">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#Rename this file to "mirrorlist"(without quotation marks)\r\n
+#Put this file in /etc/pacman.d/\r\n
+#\r\n
+#\r\n
+#\r\n
+#Example\r\n
+#For i686\r\n
+Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/i686\r\n
+#For x86_64\r\n
+Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/x86_64\r\n
+</string>
+<string name="centos">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#\r\n
+#\r\n
+#For CentOS5 Users\r\n
+#Create a new file "CentOS5-Base-LZUOSS.repo"(without quotation marks) with content below:\r\n
+############START_CENTOS_5\r\n
+[base]\r\n
+name=CentOS-$releasever - Base - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/os/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+\r\n
+#released updates \r\n
+[updates]\r\n
+name=CentOS-$releasever - Updates - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/updates/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+\r\n
+#packages used/produced in the build but not released\r\n
+[addons]\r\n
+name=CentOS-$releasever - Addons - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/addons/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=addons\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+\r\n
+#additional packages that may be useful\r\n
+[extras]\r\n
+name=CentOS-$releasever - Extras - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/extras/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+\r\n
+#additional packages that extend functionality of existing packages\r\n
+[centosplus]\r\n
+name=CentOS-$releasever - Plus - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/centosplus/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus\r\n
+gpgcheck=1\r\n
+enabled=0\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+\r\n
+#contrib - packages by Centos Users\r\n
+[contrib]\r\n
+name=CentOS-$releasever - Contrib - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/contrib/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=contrib\r\n
+gpgcheck=1\r\n
+enabled=0\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5\r\n
+############END_CENTOS_5\r\n
+#And put this file in /etc/yum.repos.d/\r\n
+#\r\n
+#\r\n
+#For CentOS6 Users\r\n
+#Create a new file "CentOS6-Base-LZUOSS.repo"(without quotation marks) with content below:\r\n
+############START_CENTOS_6\r\n
+[base]\r\n
+name=CentOS-$releasever - Base  - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/os/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6\r\n
+\r\n
+#released updates \r\n
+[updates]\r\n
+name=CentOS-$releasever - Updates  - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/updates/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6\r\n
+\r\n
+#additional packages that may be useful\r\n
+[extras]\r\n
+name=CentOS-$releasever - Extras  - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/extras/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras\r\n
+gpgcheck=1\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6\r\n
+\r\n
+#additional packages that extend functionality of existing packages\r\n
+[centosplus]\r\n
+name=CentOS-$releasever - Plus  - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/centosplus/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus\r\n
+gpgcheck=1\r\n
+enabled=0\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6\r\n
+\r\n
+#contrib - packages by Centos Users\r\n
+[contrib]\r\n
+name=CentOS-$releasever - Contrib  - LZUOSS\r\n
+baseurl=http://mirror.lzu.edu.cn/centos/$releasever/contrib/$basearch/\r\n
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=contrib\r\n
+gpgcheck=1\r\n
+enabled=0\r\n
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6\r\n
+############END_CENTOS_6\r\n
+#And Put this file in /etc/yum.repos.d/\r\n
+#\r\n
+#Make cahce use command like this: yum makecache\r\n
+</string>
+<string name="deepin">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#Rename this file to "source.list"(without quotation marks)\r\n
+#Put this file in /etc/apt/\r\n
+#\r\n
+#\r\n
+#\r\n
+deb http://mirror.lzu.edu.cn/ubuntu precise main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu precise-security main restricted universe multiverse\r\n
+deb http://mirror.lzu.edu.cn/ubuntu precise-updates main restricted universe multiverse\r\n
+#deb http://mirror.lzu.edu.cn/ubuntu precise-proposed main restricted universe multiverse\r\n
+#deb http://mirror.lzu.edu.cn/ubuntu precise-backports main restricted universe multiverse\r\n
+\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu precise main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu precise-security main restricted universe multiverse\r\n
+deb-src http://mirror.lzu.edu.cn/ubuntu precise-updates main restricted universe multiverse\r\n
+#deb-src http://mirror.lzu.edu.cn/ubuntu precise-proposed main restricted universe multiverse\r\n
+#deb-src http://mirror.lzu.edu.cn/ubuntu precise-backports main restricted universe multiverse\r\n
+\r\n
+deb http://mirror.lzu.edu.cn/deepin quantal main non-free\r\n
+deb-src http://mirror.lzu.edu.cn/deepin quantal main non-free\r\n
+\r\n
+deb http://mirror.lzu.edu.cn/deepin quantal-updates main non-free\r\n
+deb-src http://mirror.lzu.edu.cn/deepin quantal-updates main non-free\r\n
+</string>
+<string name="fedora">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#\r\n
+#Create a new file "fedora-LZUOSS.repo"(without quotation marks) with content below:\r\n
+############START_FEDORA_LZUOSS.REPO\r\n
+[fedora]\r\n
+name=Fedora $releasever - $basearch - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/releases/$releasever/Everything/$basearch/os/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&amp;arch=$basearch\r\n
+enabled=1\r\n
+metadata_expire=7d\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+\r\n
+[fedora-debuginfo]\r\n
+name=Fedora $releasever - $basearch - Debug - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/releases/$releasever/Everything/$basearch/debug/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-debug-$releasever&amp;arch=$basearch\r\n
+enabled=0\r\n
+metadata_expire=7d\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+\r\n
+[fedora-source]\r\n
+name=Fedora $releasever - Source - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/releases/$releasever/Everything/source/SRPMS/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-source-$releasever&amp;arch=$basearch\r\n
+enabled=0\r\n
+metadata_expire=7d\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+############END_FEDORA_LZUOSS.REPO\r\n
+#And put this file in /etc/yum.repos.d/\r\n
+#\r\n
+#Create a new file "fedora-updates-LZUOSS.repo"(without quotation marks) with content below:\r\n
+############START_FEDORA_UPDATES_LZUOSS.REPO\r\n
+[updates]\r\n
+name=Fedora $releasever - $basearch - Updates - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/updates/$releasever/$basearch/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&amp;arch=$basearch\r\n
+enabled=1\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+\r\n
+[updates-debuginfo]\r\n
+name=Fedora $releasever - $basearch - Updates - Debug - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/updates/$releasever/$basearch/debug/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-released-debug-f$releasever&amp;arch=$basearch\r\n
+enabled=0\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+\r\n
+[updates-source]\r\n
+name=Fedora $releasever - Updates Source - LZUOSS\r\n
+failovermethod=priority\r\n
+baseurl=http://mirror.lzu.edu.cn/fedora/updates/$releasever/SRPMS/\r\n
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-released-source-f$releasever&amp;arch=$basearch\r\n
+enabled=0\r\n
+gpgcheck=1\r\n
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch\r\n
+############END_FEDORA_UPDATES_LZUOSS.REPO\r\n
+#And put this file in /etc/yum.repos.d/\r\n
+#\r\n
+#Make cahce use command like this: yum makecache\r\n
+</string>
+<string name="gentoo">#Welcome to LZUOSS Mirror Website\r\n
+#\r\n
+##This mirror is maintained by LZUOSS, if you have any problem, please let us know in several approaches:\r\n
+#Email:oss.lzu.edu.cn@gmail.com\r\n
+#Google Public Group:come-on-all@googlegroups.com(https://groups.google.com/d/forum/come-on-all?hl=zh-CN)\r\n
+#QQ Group:247736999\r\n
+#\r\n
+#Our Website:http://oss.lzu.edu.cn\r\n
+#Our Mirror:http://mirror.lzu.edu.cn\r\n
+#Our Project Center(GIT):http://oss.lzu.edu.cn/project\r\n
+#Our Blog:http://oss.lzu.edu.cn/blog\r\n
+#\r\n
+#\r\n
+#\r\n
+#Back up your files before any change\r\n
+#\r\n
+#\r\n
+#Add or update the file in /etc/make.conf with the last line\r\n
+\r\n
+GENTOO_MIRRORS="http://mirror.lzu.edu.cn/gentoo/"   \r\n
+</string>
+<string name="opensuse"></string>
+<string name="users">
+ftpserver.user.admin.userpassword=21232F297A57A5A743894A0E4A801FC3\r\n
+
+ftpserver.user.admin.homedirectory=/mnt/sdcard/ftplist/\r\n
+
+ftpserver.user.admin.enableflag=true\r\n
+
+ftpserver.user.admin.writepermission=true\r\n
+
+ftpserver.user.admin.maxloginnumber=0\r\n
+
+ftpserver.user.admin.maxloginperip=0\r\n
+
+ftpserver.user.admin.idletime=0\r\n
+
+ftpserver.user.admin.uploadrate=0\r\n
+
+ftpserver.user.admin.downloadrate=0\r\n
+
+
+ftpserver.user.anonymous.userpassword=\r\n
+
+ftpserver.user.anonymous.homedirectory=/mnt/sdcard/ftplist/\r\n
+
+ftpserver.user.anonymous.enableflag=true\r\n
+
+ftpserver.user.anonymous.writepermission=false\r\n
+
+ftpserver.user.anonymous.maxloginnumber=20\r\n
+
+ftpserver.user.anonymous.maxloginperip=2\r\n
+
+ftpserver.user.anonymous.idletime=300\r\n
+
+ftpserver.user.anonymous.uploadrate=4800\r\n
+
+ftpserver.user.anonymous.downloadrate=4800\r\n
+
+</string>
+
+    <string name="swiftp_name">FTP Server</string>
+    <string name="swiftp_name_demo">FTP Server (Demo)</string>
+    <string name="running_label">FTP Server</string>
+    <string name="running_summary_stopped">Toggle the state of the ftp server</string>
+    <string name="running_summary_started">at %s</string>
+    <string name="running_summary_failed">Failed to start the FTP server, not connected to the local network (wifi or ethernet)?</string>
+    <string name="market_version_label">Market version</string>
+    <string name="market_version_summary">
+        This is the FTP Server Demo version.
+        Support development by getting the FTP Server from the android market.
+        Click here to go to the market.</string>
+    <string name="settings_label">Settings</string>
+    <string name="user_label">User</string>
+    <string name="loginsettings_label">Login settings...</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="show_password_label">Display password</string>
+    <string name="anonymous_label">Anonymous</string>
+    <string name="allow_anonymous_label">Allow anonymous login</string>
+    <string name="anonymous_summary">Anonymous logins are only allowed read access</string>
+    <string name="advancedsettings_label">Advanced settings...</string>
+    <string name="portnumber_label">Port Number</string>
+    <string name="chroot_label">Stay in folder</string>
+    <string name="acceptwifi_label">Accept connection from wifi</string>
+    <string name="wakelock_label">Keep device awake (full CPU speed)</string>
+    <string name="extra_label">Extra</string>
+    <string name="help_label">Help...</string>
+    <string name="about_label">About...</string>
+    <string name="chat_label">Chat...</string>
+    <string name="help_dlg_title">FTP Server Help</string>
+    <string name="help_dlg_message">\
+Thanks for using FTP Server (SwiFTP)! Here are some brief usage instructions. More
+information can be found at http://ppareit.github.com/swiftp/.\n\n\
+\
+This program allows you to run an ftp server on your android device. This means that any
+program can access the files on your device while the ftp server is running. For example,
+entering \'ftp://...\' in the firefox url bar will allow you to browse the files on your
+device from a desktop pc or a laptop.\n\n
+\
+By default, the user name and password are both \'ftp\', you should change them. You use
+this username and password when accessing the server.\n\n
+\
+There is a configuration option (\"keep phone awake\") that fixes a problem where
+file transfers go slow or stop completely when the phone sleeps. If you have this
+problem, check this box and restart the program. Your phone will stay awake as long as
+the server is running.\n\n
+\
+For power and security reasons, it is recommended that the server be stopped after use.\n\n\
+\
+If something is not working the way you expect it to, please report it to Pieter Pareit
+(pieter.pareit@gmail.com).\n\n\
+\
+The development of this open source program is supported by buying this program through
+the google play store. You can follow the development at https://github.com/ppareit/swiftp .
+To have an idea on the features that will be implemented, see the issue tracker at
+https://github.com/ppareit/swiftp/issues .\n\n
+    </string>
+    <string name="about_dlg_title">FTP Server About</string>
+    <string name="about_dlg_message">
+        <b>Description: </b>
+        FTP Server (SwiFTP) allows you to run an ftp server on your android device.\n\n\
+        <b>Website:</b>
+        http://ppareit.github.com/swiftp/\n\n
+        <b>Current maintainer:</b>
+        Pieter Pareit (pieter.pareit@gmail.com)\n\n
+        <b>Programming: </b>\
+        Dave Revell (dave.revell@gmail.com), Pieter Pareit (pieter.pareit@gmail.com)\n\n\
+        <b>Artwork:</b>
+        Birgit Niemegeers\n\n
+        <b>License: </b>
+        GNU General Public License v3.0\n\n
+    </string>
+    <string name="notif_server_starting">Starting at %s</string>
+    <string name="notif_title">FTP Server is running</string>
+    <string name="notif_text">at %s</string>
+    <string name="notif_stop_text">Stop server</string>
+
+    <string name="nsd_servername_postfix">FTP Server</string>
+
+    <!-- old strings -->
+    <string name="cant_get_url">Can\'t retrieve url</string>
+    <string name="unknown">unknown</string>
+    <string name="ok">OK</string>
+    <string name="username_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string>
+    <string name="password_validation_error">The password must consist of 1 or more alphanumeric characters. No other characters are allowed.</string>
+    <string name="port_validation_error">The port number must be in the range 1 to 65535.</string>
+    <string name="wifi_state_receiver_label">WifiStateReceiver</string>
+    <string name="pst_connecting">connecting</string>
+    <string name="pst_connected">connected</string>
+    <string name="pst_failed">failed</string>
+    <string name="pst_unreachable">unreachable</string>
+    <string name="pst_disconnected">disconnected</string>
+    <string name="storage_warning">Warning: storage is not available. You may want to unmount it.</string>
+    <string name="widget_name">FTP Server Widget</string>
+
 </resources>
