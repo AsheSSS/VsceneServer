@@ -44,7 +44,6 @@ public class SocketService extends Service {
 
     @Override
     public void onCreate() {
-        Log.e("eeee","onStartCommand");
         super.onCreate();
     }
 
@@ -59,8 +58,16 @@ public class SocketService extends Service {
 
     @Override
     public boolean onUnbind(Intent intent) {
+        Log.e("eee","onUnbind");
         server.close();
         return super.onUnbind(intent);
 
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.e("eee","onDestroy");
+        server.close();
+        super.onDestroy();
     }
 }

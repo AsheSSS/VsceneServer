@@ -65,42 +65,42 @@ public class ServerLastly implements Runnable {
         }
     }
 
+    public Boolean isServerClose(Socket socket) {
+        try {
+            socket.sendUrgentData(0);//发送1个字节的紧急数据，默认情况下，服务器端没有开启紧急数据处理，不影响正常通信
+            return false;
+        } catch (Exception se) {
+            return true;
+        }
+    }
+
     PrintWriter pw;
+
+    boolean flag = true;
 
     //接数据
     @Override
     public void run() {
         Log.i(TAG, "Server=======打开服务=========");
         try {
-            server = new ServerSocket(8080);
-            client = server.accept();
-
-            //创建一个客户端的输出流（用于在客户端显示）
-            pw = new PrintWriter(client.getOutputStream());
-            Log.i(TAG, "Server=======客户端连接成功=========");
-            InetAddress inetAddress = client.getInetAddress();
-            String ip = inetAddress.getHostAddress();
-            Log.i(TAG, "===客户端ID为:" + ip);
-            os = new PrintWriter(client.getOutputStream());
-            is = new BufferedReader(new InputStreamReader(client.getInputStream()));
-
+            init();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-
         String result = "";
-        while (true) {
+        while (flag) {
             try {
-                if (is != null) {
-
+                Boolean close = isServerClose(client);
+                if (!close) {
                     result = is.readLine();
                     Log.i(TAG, "服务端接到的数据为：" + result);
-
                     pw.println("服务端说:" + result);
+//                if (null == result) {
+//                    flag = false;
+//                    close();
+//                }
                     pw.flush();
-
                     //把数据带回activity显示
                     Message msg = handler.obtainMessage();
                     msg.obj = result;
@@ -108,15 +108,23 @@ public class ServerLastly implements Runnable {
                     if (!TextUtils.isEmpty(result)) {
                         handler.sendMessage(msg);
                     }
+                } else {
+                    flag = false;
+                    close();
+                    //---------创建连接-------------------------
+                    try {
+                        init();
+                    } catch (Exception se) {
+                        close = true;
+                    }
                 }
 
-            } catch (IOException e) {
+
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
-
-
     }
 
     public void close() {
@@ -137,6 +145,22 @@ public class ServerLastly implements Runnable {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+    }
+
+    private void init() throws IOException {
+        server = new ServerSocket(8080);
+        client = server.accept();
+        flag = true;
+
+        //创建一个客户端的输出流（用于在客户端显示）
+        pw = new PrintWriter(client.getOutputStream());
+        Log.i(TAG, "Server=======客户端连接成功=========");
+        InetAddress inetAddress = client.getInetAddress();
+        String ip = inetAddress.getHostAddress();
+        Log.i(TAG, "===客户端ID为:" + ip);
+        os = new PrintWriter(client.getOutputStream());
+        is = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
     }
 

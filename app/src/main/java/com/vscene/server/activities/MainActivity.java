@@ -58,7 +58,6 @@ import java.net.InetAddress;
 /**
  * This is the main activity for swiftp, it enables the user to start the server service
  * and allows the users to change the settings.
- *
  */
 public class MainActivity extends PreferenceActivity implements
         OnSharedPreferenceChangeListener {
@@ -252,6 +251,7 @@ public class MainActivity extends PreferenceActivity implements
 
         // Socket通信服务，已经启动
         Intent intent = new Intent(this, SocketService.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startService(intent);
 
     }
@@ -388,9 +388,17 @@ public class MainActivity extends PreferenceActivity implements
         }
     }
 
-    @SuppressWarnings({ "unchecked", "deprecation" })
+    @SuppressWarnings({"unchecked", "deprecation"})
     protected <T extends Preference> T findPref(CharSequence key) {
         return (T) this.findPreference(key);
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Intent intent = new Intent(this, SocketService.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        stopService(intent);
+    }
 }
